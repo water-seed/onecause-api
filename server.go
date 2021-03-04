@@ -104,6 +104,7 @@ func main() {
 	r.HandleFunc("/login", LoginHandler).Methods(http.MethodPost, http.MethodOptions)
 	r.Use(mux.CORSMethodMiddleware(r))
 
+	// TLS please
 	srv := &http.Server{
 		Addr:         "0.0.0.0:5000",
 		WriteTimeout: time.Second * 15,
